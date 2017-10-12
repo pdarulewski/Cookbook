@@ -8,6 +8,6 @@ namespace Cookbook
 {
     class Cookbook
     {
-
+        
     }
 }
