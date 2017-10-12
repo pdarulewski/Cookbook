@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cookbook
 {
-    class Recipe
+    class Ingridient
     {
-        private String title { set; get; }
-        private String recipeText { set; get; }
-
     }
 }
