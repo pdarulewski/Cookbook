@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cookbook
 {
-    class Ingridient
+    class Ingredient
     {
     }
 }
