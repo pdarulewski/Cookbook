@@ -4,20 +4,13 @@ namespace Cookbook
 {
     class Ingredient
     {
-        private string name { set; get; }
-        private string _type;
-        public string Type
-        {
-            get { return _type; }
-            set
-            {
-                if (value != "Fruit" && value != "Vegetable" && value != "Meat" && value != "Seasoning")
-                {
-                    throw new ArgumentException("The type of ingredient is improper.");
-                }
+        private string Name { set; get; }
+        private int Amount { set; get; }
+        private string Unit { set; get; }
 
-                _type = value;
-            }
+        public override string ToString()
+        {
+            return string.Format("{0} {1} of {2}.", Amount, Unit, Name);
         }
     }
 }
