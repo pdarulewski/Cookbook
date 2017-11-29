@@ -30,10 +30,5 @@ namespace Cookbook
         {
 
         }
-
-        public void searchForRecipeByTag()
-        {
-
-        }
     }
 }

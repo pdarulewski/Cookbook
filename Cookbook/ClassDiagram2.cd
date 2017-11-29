@@ -65,9 +65,9 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Cookbook.MainController">
-    <Position X="2.25" Y="7.5" Width="1.5" />
+    <Position X="1.5" Y="7.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>ACAAJAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <HashCode>ACAABAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>MainController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -97,12 +97,13 @@
   <Class Name="Cookbook.Recipe">
     <Position X="10" Y="2.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAABBAIAAAAiAUAAAAAAACAAAAABABIIAAAIAAAACAA=</HashCode>
+      <HashCode>AAABBAIAAAAiAUAAAAAAACAAAAABABIIAIAIAAAACAA=</HashCode>
       <FileName>Recipe.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Ingredient" />
       <Property Name="Enums" />
+      <Property Name="Cookbook" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Cookbook.RecipeController">
@@ -118,12 +119,9 @@
   <Class Name="Cookbook.Cookbook">
     <Position X="6.75" Y="3.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAAAAAAAAAIAQAAAAAABAAAAAEAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAQAAAAAABAAAAAEAAAAAAA=</HashCode>
       <FileName>Cookbook.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Recipe" />
-    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

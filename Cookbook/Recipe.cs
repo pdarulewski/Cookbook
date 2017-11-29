@@ -47,6 +47,14 @@ namespace Cookbook
             }
         }
 
+        internal Cookbook Cookbook
+        {
+            get => default(Cookbook.Cookbook);
+            set
+            {
+            }
+        }
+
         private List<Enums.Event> events;
         private List<Enums.Category> category;
         private List<Enums.Type> type;

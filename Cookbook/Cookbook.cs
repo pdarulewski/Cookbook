@@ -10,14 +10,6 @@ namespace Cookbook
         private List<Recipe> Recipes { set; get; }
         private Image Image { set; get; }
 
-        internal Recipe Recipe
-        {
-            get => default(Cookbook.Recipe);
-            set
-            {
-            }
-        }
-
         public Cookbook() { }
         public Cookbook(string Name, List<Recipe> Recipes, Image Image)
         {
