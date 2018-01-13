@@ -8,7 +8,7 @@ namespace Cookbook
     {
         private string Title { set; get; }
         private string Description { set; get; }
-        private List<string> Steps { set; get; }
+        private string Text { set; get; }
         private string Category { set; get; }
         private List<Ingredient> Ingredients { set; get; }
         private int Portions { set; get; }
@@ -63,13 +63,13 @@ namespace Cookbook
         {
         }
         public Recipe(string Title, string Category, string Description,
-            List<string> Steps, List<Ingredient> Ingredients, int Portions,
+            string Text, List<Ingredient> Ingredients, int Portions,
             TimeSpan CookingTime, Image Image, int Difficulty)
         {
             this.Title = Title;
             this.Category = Category;
             this.Description = Description;
-            this.Steps = Steps;
+            this.Text = Text;
             this.Ingredients = Ingredients;
             this.Portions = Portions;
             this.CookingTime = CookingTime;
