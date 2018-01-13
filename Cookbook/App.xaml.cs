@@ -13,5 +13,6 @@ namespace Cookbook
     /// </summary>
     public partial class App : Application
     {
+
     }
 }
