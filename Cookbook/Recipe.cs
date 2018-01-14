@@ -16,10 +16,7 @@ namespace Cookbook
         private Image Image { set; get; }
         private int Difficulty
         {
-            get
-            {
-                return Difficulty;
-            }
+            get { return Difficulty; }
 
             set
             {
@@ -37,10 +34,12 @@ namespace Cookbook
 
         public Recipe()
         {
+
         }
+
         public Recipe(string Title, string Category, string Description,
-            string Text, List<Ingredient> Ingredients, int Portions,
-            TimeSpan CookingTime, Image Image, int Difficulty)
+                      string Text, List<Ingredient> Ingredients, int Portions,
+                      TimeSpan CookingTime, Image Image, int Difficulty)
         {
             this.Title = Title;
             this.Category = Category;
@@ -52,6 +51,5 @@ namespace Cookbook
             this.Image = Image;
             this.Difficulty = Difficulty;
         }
-
     }
 }
