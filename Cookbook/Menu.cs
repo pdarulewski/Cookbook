@@ -8,13 +8,6 @@ namespace Cookbook
 {
     class Menu
     {
-        internal Cookbook Cookbook
-        {
-            get => default(Cookbook.Cookbook);
-            set
-            {
-            }
-        }
 
         public bool addNewRecipe()
         {

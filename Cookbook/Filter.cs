@@ -8,13 +8,6 @@ namespace Cookbook
 {
     class Filter
     {
-        internal Cookbook Cookbook
-        {
-            get => default(Cookbook.Cookbook);
-            set
-            {
-            }
-        }
 
         public Recipe findRecipyByTag(string tag, List<Recipe> recipes)
         {

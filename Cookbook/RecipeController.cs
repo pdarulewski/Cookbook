@@ -8,14 +8,6 @@ namespace Cookbook
 {
     class RecipeController
     {
-        internal Recipe Recipe
-        {
-            get => default(Cookbook.Recipe);
-            set
-            {
-            }
-        }
-
         public void showRecipe()
         {
 

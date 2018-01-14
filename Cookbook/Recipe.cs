@@ -31,30 +31,6 @@ namespace Cookbook
             }
         }
 
-        internal Ingredient Ingredient
-        {
-            get => default(Cookbook.Ingredient);
-            set
-            {
-            }
-        }
-
-        internal Enums Enums
-        {
-            get => default(Cookbook.Enums);
-            set
-            {
-            }
-        }
-
-        internal Cookbook Cookbook
-        {
-            get => default(Cookbook.Cookbook);
-            set
-            {
-            }
-        }
-
         private List<Enums.Event> events;
         private List<Enums.Category> category;
         private List<Enums.Type> type;

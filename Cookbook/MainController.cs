@@ -8,13 +8,6 @@ namespace Cookbook
 {
     class MainController
     {
-        internal MainClass MainClass
-        {
-            get => default(Cookbook.MainClass);
-            set
-            {
-            }
-        }
 
         public void showMainMenu()
         {

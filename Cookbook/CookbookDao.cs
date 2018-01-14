@@ -8,13 +8,6 @@ namespace Cookbook
 {
     class CookbookDao
     {
-        internal Cookbook Cookbook
-        {
-            get => default(Cookbook.Cookbook);
-            set
-            {
-            }
-        }
 
         public List<Recipe> getAllRecipes()
         {
