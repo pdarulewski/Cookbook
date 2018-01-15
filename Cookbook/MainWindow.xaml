@@ -15,23 +15,24 @@
         
         <Grid Name="MyGrid" ShowGridLines="False">
             <Grid.RowDefinitions>
-                <RowDefinition Height="220*" />
-                <RowDefinition Height="164*" />
-                <RowDefinition Height="165*" />
+                <RowDefinition Height="210*" />
+                <RowDefinition Height="130*" />
+                <RowDefinition Height="130*" />
+                <RowDefinition Height="130*" />
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" FontFamily="Century Gothic" FontSize="30" VerticalAlignment="Center" Height="32" Margin="45,95,0,93">
+            <TextBlock Grid.Row="0" FontFamily="Century Gothic" FontSize="30" VerticalAlignment="Center" Height="32" Margin="100,0,0,0">
                 Welcome to COOKING BOOK
             </TextBlock>
-            <StackPanel Grid.Row = "0" Margin="10,-18,0,1" Height="237" VerticalAlignment="Bottom">
-                <Ellipse Height = "200" Width = "200" HorizontalAlignment = "Center" Margin = "513,30,69,0">
+            <StackPanel Grid.Row = "0" Height="124" VerticalAlignment="Bottom" Margin="-10,0,10,32">
+                <Ellipse Height = "130" Width = "130" HorizontalAlignment = "Center" Margin = "581,0,81,0">
                     <Ellipse.Fill>
                         <ImageBrush ImageSource = "C:\Users\Asia\Desktop\studia\semestr 5\C#\Cookbook\Cookbook\Cookbook\cook.png" />
                     </Ellipse.Fill>
                 </Ellipse>
             </StackPanel>
 
-            <Button Name="FindByIngredients" Grid.Row="1" Foreground="White" FontFamily="Century Gothic" FontSize="24">Find recipe by ingredients
+            <Button Name="FindByIngredients" Grid.Row="1" Foreground="White" FontFamily="Century Gothic" FontSize="24" Click="OpenFindRecipeByIngredientsWindow">Find recipe by ingredients
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Background" Value="DarkOliveGreen"/>
@@ -52,8 +53,29 @@
                     </Style>
                 </Button.Style>
             </Button>
-            
-            <Button Name="FindByTitle" Grid.Row="2" Foreground="White"  FontFamily="Century Gothic" FontSize="24">Find recipe by title
+
+            <Button Name="FindByTitle" Grid.Row="2" Foreground="White"  FontFamily="Century Gothic" FontSize="24" Click="OpenFindRecipeByTitleWindow">Find recipe by title
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="DarkOliveGreen"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="OliveDrab"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Name="AddRecipe" Grid.Row="3" Foreground="White"  FontFamily="Century Gothic" FontSize="24" Click="OpenAddRecipeWindow">Add new recipe
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Background" Value="DarkOliveGreen"/>

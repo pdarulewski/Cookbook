@@ -1,0 +1,53 @@
+﻿<Window x:Class="Cookbook.FindRecipeByTitleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Find recipe by title" Height="600" Width="800">
+
+        <Grid Name="MyGrid" ShowGridLines="False">
+            <Grid.RowDefinitions>
+            <RowDefinition Height="150*" />
+            <RowDefinition Height="150*" />
+                <RowDefinition Height="300*" />
+            </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" FontFamily="Century Gothic" FontSize="30" VerticalAlignment="Center" Height="32" Margin="165,56,314,55">
+                COOKING BOOK
+        </TextBlock>
+        <StackPanel Grid.Row = "0" Height="156" VerticalAlignment="Bottom" Margin="0,-13,10,0">
+            <Ellipse Height = "120" Width = "120" HorizontalAlignment = "Center" Margin = "500,40,86,0">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource = "C:\Users\Asia\Desktop\studia\semestr 5\C#\Cookbook\Cookbook\Cookbook\cook.png" />
+                </Ellipse.Fill>
+            </Ellipse>
+        </StackPanel>
+
+        <Label Content="Enter recipe title to seach for" FontSize="18" Grid.Row="1" Margin="177,28,367,67"/>
+        <TextBox Name="SearchBox" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="165,58,367,37" Grid.Row="1"/>
+        <Button Name="FindByTitleButton" Foreground="White" FontFamily="Century Gothic" Click="SearchByTitle" Margin="534,58,154,37" Grid.Row="1">SEARCH
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="DarkOliveGreen"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="OliveDrab"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <ListView Name="RecipesList" Margin="10" FontSize="18" Grid.Row="2">
+        </ListView>
+            
+    </Grid>
+
+</Window>

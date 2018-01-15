@@ -12,5 +12,13 @@ namespace Cookbook
         {
             return string.Format("{0} {1} of {2}.", Amount, Unit, Name);
         }
+
+        public Ingredient(string Name)
+        {
+            this.Name = Name;
+            this.Amount = 0;
+            this.Unit = "kg";
+        }
+
     }
 }
