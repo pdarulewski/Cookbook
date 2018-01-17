@@ -49,6 +49,13 @@ namespace Cookbook
             return string.Format("{0} {1} of {2}.", Amount, Unit, Name);
         }
 
+        public Ingredient(string Name, int Amount, string Unit)
+        {
+            this.Name = Name;
+            this.Amount = Amount;
+            this.Unit = Unit;
+        }
+
         public Ingredient(string Name)
         {
             this.Name = Name;
