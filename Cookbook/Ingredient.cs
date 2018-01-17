@@ -4,9 +4,45 @@ namespace Cookbook
 {
     class Ingredient
     {
-        private string Name { set; get; }
-        private int Amount { set; get; }
-        private string Unit { set; get; }
+        private string name;
+        public string Name
+        {
+            set
+            {
+                this.name = value;
+            }
+
+            get
+            {
+                return this.name;
+            }
+        }
+        private int amount;
+        public int Amount
+        {
+            set
+            {
+                this.amount = value;
+            }
+
+            get
+            {
+                return this.amount;
+            }
+        }
+        private string unit;
+        public string Unit
+        {
+            set
+            {
+                this.unit = value;
+            }
+
+            get
+            {
+                return this.unit;
+            }
+        }
 
         public override string ToString()
         {
@@ -19,6 +55,5 @@ namespace Cookbook
             this.Amount = 0;
             this.Unit = "kg";
         }
-
     }
 }

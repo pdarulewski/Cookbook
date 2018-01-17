@@ -6,30 +6,149 @@ namespace Cookbook
 {
     class Recipe
     {
-        private string Title { set; get; }
-        private string Description { set; get; }
-        private string Text { set; get; }
-        private List<Ingredient> Ingredients { set; get; }
-        private int Portions { set; get; }
-        private TimeSpan CookingTime { set; get; }
-        private Image Image { set; get; }
-        private int Difficulty
+        private string title;
+        public string Title
         {
-            get { return Difficulty; }
-
             set
             {
-                if (value < 0 || value > 10)
-                {
-                    throw new ArgumentOutOfRangeException("New value is out of range. Avaiable range is <0, 10>");
-                }
-                Difficulty = value;
+                this.title = value;
+            }
+
+            get
+            {
+                return this.title;
             }
         }
+        private string description;
+        public string Description
+        {
+            set
+            {
+                this.description = value;
+            }
 
-        private string Events { set; get; }
-        private string Category { set; get; }
-        private string Type { set; get; }
+            get
+            {
+                return this.description;
+            }
+        }
+        private string text;
+        public string Text
+        {
+            set
+            {
+                this.text = value;
+            }
+
+            get
+            {
+                return this.text;
+            }
+        }
+        private List<Ingredient> ingredients;
+        public List<Ingredient> Ingredients
+        {
+            set
+            {
+                this.ingredients = value;
+            }
+
+            get
+            {
+                return this.ingredients;
+            }
+        }
+        private int portions;
+        public int Portions
+        {
+            set
+            {
+                this.portions = value;
+            }
+
+            get
+            {
+                return this.portions;
+            }
+        }
+        private TimeSpan cookingTime;
+        public TimeSpan CookingTime
+        {
+            set
+            {
+                this.cookingTime = value;
+            }
+
+            get
+            {
+                return this.cookingTime;
+            }
+        }
+        private Image image;
+        public Image Image
+        {
+            set
+            {
+                this.image = value;
+            }
+
+            get
+            {
+                return this.image;
+            }
+        }
+        private int difficulty;
+        public int Difficulty
+        {
+            set
+            {
+                this.difficulty = value;
+            }
+
+            get
+            {
+                return this.difficulty;
+            }
+        }
+        private string events;
+        public string Events
+        {
+            set
+            {
+                this.events = value;
+            }
+
+            get
+            {
+                return this.events;
+            }
+        }
+        private string category;
+        public string Category
+        {
+            set
+            {
+                this.category = value;
+            }
+
+            get
+            {
+                return this.category;
+            }
+        }
+        private string type;
+        public string Type
+        {
+            set
+            {
+                this.type = value;
+            }
+
+            get
+            {
+                return this.type;
+            }
+        }
 
         public Recipe()
         {

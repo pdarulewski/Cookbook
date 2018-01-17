@@ -40,7 +40,23 @@ namespace Cookbook
                         {
                             ingredientsList.Add(new Ingredient(token));
                         }
+
                         Image img = null;
+                        Console.WriteLine(oReader["Title"].ToString());
+                        Console.WriteLine(oReader["Description"].ToString());
+                        Console.WriteLine(oReader["Text"].ToString());
+                        foreach(Ingredient elem in ingredientsList)
+                        {
+                            Console.WriteLine(elem.Name);
+                        }
+                        Console.WriteLine(ingredientsList);
+                        Console.WriteLine(Int32.Parse(oReader["Portions"].ToString()));
+                        Console.WriteLine((TimeSpan)oReader["CookingTime"]);
+                        Console.WriteLine(Int32.Parse(oReader["Difficulty"].ToString()));
+                        Console.WriteLine(oReader["Event"].ToString());
+                        Console.WriteLine(oReader["Category"].ToString());
+                        Console.WriteLine(oReader["Type"].ToString());
+
                         recipeList.Add(new Recipe(oReader["Title"].ToString(), oReader["Description"].ToString(),
                             oReader["Text"].ToString(), ingredientsList, Int32.Parse(oReader["Portions"].ToString()),
                             (TimeSpan)oReader["CookingTime"], img, Int32.Parse(oReader["Difficulty"].ToString()),
