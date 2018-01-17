@@ -9,7 +9,6 @@ namespace Cookbook
         private string Title { set; get; }
         private string Description { set; get; }
         private string Text { set; get; }
-        private string Category { set; get; }
         private List<Ingredient> Ingredients { set; get; }
         private int Portions { set; get; }
         private TimeSpan CookingTime { set; get; }
@@ -28,18 +27,19 @@ namespace Cookbook
             }
         }
 
-        private List<Enums.Event> events;
-        private List<Enums.Category> category;
-        private List<Enums.Type> type;
+        private string Events { set; get; }
+        private string Category { set; get; }
+        private string Type { set; get; }
 
         public Recipe()
         {
 
         }
 
-        public Recipe(string Title, string Category, string Description,
+        public Recipe(string Title, string Description,
                       string Text, List<Ingredient> Ingredients, int Portions,
-                      TimeSpan CookingTime, Image Image, int Difficulty)
+                      TimeSpan CookingTime, Image Image, int Difficulty, 
+                      string Events, string Category, string Type)
         {
             this.Title = Title;
             this.Category = Category;
@@ -50,6 +50,8 @@ namespace Cookbook
             this.CookingTime = CookingTime;
             this.Image = Image;
             this.Difficulty = Difficulty;
+            this.Events = Events;
+            this.Type = Type;
         }
     }
 }

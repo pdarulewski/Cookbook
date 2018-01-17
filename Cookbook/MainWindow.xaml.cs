@@ -22,6 +22,9 @@ namespace Cookbook
     {
         public MainWindow()
         {
+            CookbookDao dao = new CookbookDao();
+            List<Recipe> list = new List<Recipe>();
+            list = dao.GetAllRecipes();
             InitializeComponent();
         }
 
