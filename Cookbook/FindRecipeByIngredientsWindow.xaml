@@ -21,8 +21,8 @@
                 </Ellipse>
             </StackPanel>
 
-        <Label Content="Add / Remove ingredient" FontSize="18" Grid.Row="1" Margin="51,5,514,90"/>
-        <Label Content="Chosen ingredients: " Name="IngredientsString" FontSize="16" Grid.Row="1" Margin="10,85,10,10"/>
+        <Label Content="Add/Remove ingredient, event or type" FontSize="18" Grid.Row="1" Margin="10,5,452,90"/>
+        <Label Content="Chosen keywords: " Name="IngredientsString" FontSize="16" Grid.Row="1" Margin="10,85,10,10"/>
         <TextBox Name="TextBox" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="28,38,504,78" Grid.Row="1"/>
         <Button Name="AddButton" Foreground="White" FontFamily="Century Gothic" Width="100" Height="50" Click="AddIngredient" Margin="343,17,345,78" Grid.Row="1">ADD
             <Button.Style>
@@ -88,7 +88,12 @@
             </Button.Style>
         </Button>
 
-        <ListBox Grid.Row="2" Name="listBox" Margin="10" FontSize="18">
-        </ListBox>
+        <ListView Name="listBox" Margin="10" FontSize="18" Grid.Row="2">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="MouseDoubleClick" Handler="OpenRecipeWindow" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
     </Grid>
 </Window>

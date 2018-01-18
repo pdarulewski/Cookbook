@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Cookbook
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -30,21 +27,18 @@ namespace Cookbook
 
         private void OpenFindRecipeByIngredientsWindow(object sender, RoutedEventArgs e)
         {
-            Console.Out.WriteLine("\"Find Recipe By Ingredients\" CLICKED!");
             FindRecipeByIngredientsWindow findRecipeByIngredientsWindow = new FindRecipeByIngredientsWindow();
             findRecipeByIngredientsWindow.Show();
         }
 
         private void OpenFindRecipeByTitleWindow(object sender, RoutedEventArgs e)
         {
-            Console.Out.WriteLine("\"Find Recipe By Title\" CLICKED!");
             FindRecipeByTitleWindow findRecipeByTitleWindow = new FindRecipeByTitleWindow();
             findRecipeByTitleWindow.Show();
         }
 
         private void OpenAddRecipeWindow(object sender, RoutedEventArgs e)
         {
-            Console.Out.WriteLine("\"Add new recipe\" CLICKED!");
             AddRecipeWindow addRecipeWindow = new AddRecipeWindow();
             addRecipeWindow.Show();
         }
