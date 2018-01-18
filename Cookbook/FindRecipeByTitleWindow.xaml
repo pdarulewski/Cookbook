@@ -21,7 +21,7 @@
             </Ellipse>
         </StackPanel>
 
-        <Label Content="Enter recipe title to seach for" FontSize="18" Grid.Row="1" Margin="177,28,367,67"/>
+        <Label Content="Enter recipe title to search for" FontSize="18" Grid.Row="1" Margin="177,28,367,67"/>
         <TextBox Name="SearchBox" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Margin="165,58,367,37" Grid.Row="1"/>
         <Button Name="FindByTitleButton" Foreground="White" FontFamily="Century Gothic" Click="SearchByTitle" Margin="534,58,154,37" Grid.Row="1">SEARCH
             <Button.Style>
@@ -46,6 +46,11 @@
         </Button>
 
         <ListView Name="RecipesList" Margin="10" FontSize="18" Grid.Row="2">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="MouseDoubleClick" Handler="OpenRecipeWindow" />
+                </Style>
+            </ListView.ItemContainerStyle>
         </ListView>
             
     </Grid>

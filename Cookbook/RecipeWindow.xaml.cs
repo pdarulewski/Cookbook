@@ -15,19 +15,8 @@ using System.Windows.Shapes;
 
 namespace Cookbook
 {
-    /// <summary>
-    /// Interaction logic for RecipeWindow.xaml
-    /// </summary>
     public partial class RecipeWindow : Window
     {
-        //public string title;
-        //public string description;
-        //public string ingredients;
-        //public int portions;
-        //public int time;
-        //public int difficulty;
-        //public string preparation;
-
         public RecipeWindow(string title, string description, string ingredients, int portions, int time, int difficulty, string preparation)
         {
             InitializeComponent();
