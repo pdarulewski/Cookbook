@@ -44,11 +44,6 @@ namespace Cookbook
             }
         }
 
-        public override string ToString()
-        {
-            return string.Format("{0} {1} of {2}.", Amount, Unit, Name);
-        }
-
         public Ingredient(string Name, int Amount, string Unit)
         {
             this.Name = Name;

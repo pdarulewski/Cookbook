@@ -8,68 +8,93 @@ namespace Cookbook
 {
     class Filter
     {
-        public List<Recipe> findRecipeByTag(List<string> tags, List<Recipe> recipes)
+
+        public List<Recipe> findRecipeByTag(List<string> tags)
         {
-            List<Recipe> list = new List<Recipe>();
-            List<Recipe> tempList = findRecipeByIngredients(tags, recipes);
-            if (list.Equals(null))
+           try
+            {
+                List<Recipe> recipes = Cookbook.recipes;
+                List<Recipe> list = new List<Recipe>();
+                List<Recipe> tempList = findRecipeByIngredients(tags);
+                if (tempList.Equals(null))
+                {
+                    return null;
+                }
+                else
+                {
+                    foreach (Recipe recipe in tempList)
+                    {
+                        foreach (string tag in tags)
+                        {
+                            if (recipe.Category.ToLower().Equals(tag.ToLower()) || recipe.Events.ToLower().Equals(tag.ToLower()) || recipe.Type.ToLower().Equals(tag.ToLower()))
+                            {
+                                list.Add(recipe);
+                            }
+                        }
+                    }
+                    if (!list.Any())
+                    {
+                        return tempList;
+                    }
+                    else
+                    {
+                        return list;
+                    }
+                }
+            }
+            catch (Exception e)
             {
                 return null;
             }
-            else
+        }
+
+        public List<Recipe> findRecipeByTitle(string title)
+        {
+            try
             {
-                foreach (Recipe recipe in tempList)
+                List<Recipe> recipes = Cookbook.recipes;
+                List<Recipe> list = new List<Recipe>();
+                foreach (Recipe recipe in recipes)
                 {
-                    foreach (string tag in tags)
+                    if (recipe.Title.ToLower().Equals(title.ToLower()))
                     {
-                        if (recipe.Category.ToLower().Equals(tag.ToLower()) || recipe.Events.ToLower().Equals(tag.ToLower()) || recipe.Type.ToLower().Equals(tag.ToLower()))
+                        list.Add(recipe);
+                    }
+                }
+                return list;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+            
+        }
+
+        public List<Recipe> findRecipeByIngredients(List<string> ingredients)
+        {
+            try
+            {
+                List<Recipe> recipes = Cookbook.recipes;
+                List<Recipe> list = new List<Recipe>();
+                foreach (Recipe recipe in recipes)
+                {
+                    foreach (Ingredient ingredient1 in recipe.Ingredients)
+                    {
+                        foreach (string ingredient2 in ingredients)
                         {
-                            list.Add(recipe);
-                        }
-                        else
-                        {
-                            return null;
+                            if (ingredient1.Name.ToLower().Contains(ingredient2.ToLower()))
+                            {
+                                list.Add(recipe);
+                            }
                         }
                     }
                 }
                 return list;
             }
-        }
-
-        public List<Recipe> findRecipeByTitle(string title, List<Recipe> recipes)
-        {
-            List<Recipe> list = new List<Recipe>();
-            foreach (Recipe recipe in recipes)
+            catch(Exception e)
             {
-                if (recipe.Title.ToLower().Equals(title.ToLower()))
-                {
-                    list.Add(recipe);
-                }
+                return null;
             }
-            return list;
-        }
-
-        public List<Recipe> findRecipeByIngredients(List<string> ingredients, List<Recipe> recipes)
-        {
-            List<Recipe> list = new List<Recipe>();
-            foreach (Recipe recipe in recipes)
-            {
-                foreach(Ingredient ingredient1 in recipe.Ingredients)
-                {
-                    foreach (string ingredient2 in ingredients)
-                    {
-                        if (ingredient1.Name.ToLower().Equals(ingredient2.ToLower()))
-                        {
-                            list.Add(recipe);
-                        }
-                        else
-                        {
-                            return null;
-                        }
-                    }
-                }
-            }
-            return list;
         }
     }
 }

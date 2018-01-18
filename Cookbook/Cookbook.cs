@@ -6,14 +6,29 @@ namespace Cookbook
 {
     class Cookbook
     {
-        private string Name { set; get; }
-        private List<Recipe> Recipes { set; get; }
-        private Image Image { set; get; }
-        public Cookbook() { }
+        private string name;
+        public string Name
+        {
+            set
+            {
+                this.name = value;
+            }
+            get
+            {
+                return name;
+            }
+        }
+        public static List<Recipe> recipes;
+
+        private Image Image;
+        public Cookbook()
+        {
+            CookbookDao dao = new CookbookDao();
+            recipes = dao.GetAllRecipes();
+        }
         public Cookbook(string Name, List<Recipe> Recipes, Image Image)
         {
             this.Name = Name;
-            this.Recipes = Recipes;
             this.Image = Image;
         }
 

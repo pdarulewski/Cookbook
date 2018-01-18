@@ -41,7 +41,15 @@ namespace Cookbook
                 }
             
             ArrayList NewRecipes = new ArrayList(filter.findRecipeByTag(listToFilter));
-            listBox.ItemsSource = NewRecipes; 
+
+            ArrayList RecipesTitles = new ArrayList();
+
+            foreach (Recipe r in NewRecipes)
+            {
+                RecipesTitles.Add(r.Title);
+            }
+
+            listBox.ItemsSource = RecipesTitles;
         }
 
         public void AddIngredient(object sender, RoutedEventArgs e)

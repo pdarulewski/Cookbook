@@ -14,7 +14,7 @@
         <StackPanel Grid.Row = "0" Height="156" VerticalAlignment="Bottom" Margin="0,0,10,0">
             <Ellipse Height = "120" Width = "120" HorizontalAlignment = "Center" Margin = "500,40,86,0">
                 <Ellipse.Fill>
-                    <ImageBrush ImageSource = "C:\Users\Asia\Desktop\studia\semestr 5\C#\Cookbook\Cookbook\Cookbook\cook.png" />
+                    <ImageBrush ImageSource = "C:\Users\Pdaawr\Documents\visual studio 2017\Projects\Cookbook\Cookbook\cook.png" />
                 </Ellipse.Fill>
             </Ellipse>
         </StackPanel>
