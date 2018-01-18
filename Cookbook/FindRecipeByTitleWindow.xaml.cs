@@ -17,24 +17,36 @@ namespace Cookbook
 {
     public partial class FindRecipeByTitleWindow : Window
     {
+        static Filter filter;
+
         public FindRecipeByTitleWindow()
         {
             InitializeComponent();
+            filter = new Filter();
         }
 
         private void SearchByTitle(object sender, RoutedEventArgs e)
         {
-            Console.Out.WriteLine("\"SEARCH\" CLICKED!");
-
             string input = SearchBox.Text;
-            Console.Out.WriteLine("user input: " + input);
-
-            // Zamiast new ArrayList trzeba wyszukać listę przepisów zawierających input w tytule
-            ArrayList NewRecipes = new ArrayList();
-            NewRecipes.Add("Znaleziony przepis " + input);
-            NewRecipes.Add("Znaleziony drugi przepis " + input);
-            NewRecipes.Add("Znaleziony trzeci przepis " + input);
+            ArrayList NewRecipes = new ArrayList(filter.findRecipeByTitle(input));
             RecipesList.ItemsSource = NewRecipes; 
+        }
+
+        private void OpenRecipeWindow(object sender, RoutedEventArgs e)
+        {
+            ListViewItem Item = (ListViewItem)sender;
+            string RecipeTitle = (String)Item.Content;
+            // First (and only) recipe with the clicked title
+            Recipe r = (filter.findRecipeByTitle(RecipeTitle))[0];
+
+            List<Ingredient> listIngredients = r.Ingredients;
+            String ingredientsString = "";
+            foreach (Ingredient i in listIngredients)
+            {
+                ingredientsString += (i + Environment.NewLine);
+            }
+            RecipeWindow rw = new RecipeWindow(r.Title, r.Description, ingredientsString, r.Portions, r.CookingTime.Hours, r.Difficulty, r.Text);
+            rw.Show();
         }
 }
 }
